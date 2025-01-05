@@ -1,0 +1,171 @@
+/* Import Roboto Font */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+/* General Section Styling */
+.section {
+    padding: 60px 15px;
+    background: linear-gradient(to right, #ffffff, #f8f9fa);
+    font-family: 'Roboto', sans-serif; /* Updated font */
+}
+
+/* Grid Item Styling */
+.spacing {
+    padding: 15px;
+}
+
+/* Portfolio Item Box */
+.item-box {
+    position: relative;
+    display: block;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    height: 300px;
+    width: 100%;
+    background: linear-gradient(to right, #d4af37, #f0c674);
+}
+
+.item-box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 8px 25px rgba(0, 0, 0, 0.2);
+}
+
+/* Ensures all images fit uniformly */
+.img-wrapper {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+}
+
+.item-container {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 20% center;
+    transition: transform 0.5s ease;
+    
+}
+
+.item-box:hover .item-container {
+    transform: scale(1.1);
+}
+
+/* Item Mask Overlay */
+.item-mask {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(44, 62, 80, 0.8);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.5s ease, visibility 0.5s ease;
+}
+
+.item-box:hover .item-mask {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Caption Inside Overlay */
+.item-mask .item-caption {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: #ffffff;
+}
+
+.item-mask h3 {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.item-mask p {
+    font-family: 'Arial', sans-serif;
+    font-size: 14px;
+    letter-spacing: 1px;
+}
+
+/* Button Styling with Ripple Effect */
+.click-me-btn {
+    font-family: 'Roboto', sans-serif;    
+    font-size: 18px;
+    font-weight: bold;
+    color: #ffffff;
+    background: linear-gradient(to right, #060500, #110c01);
+    padding: 12px 25px;
+    border-radius: 8px;
+    border: none;
+    text-transform: uppercase;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden; /* Necessary for ripple effect */
+    transition: all 0.3s ease, box-shadow 0.3s ease;
+}
+
+.click-me-btn::after {
+    content: '';
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    opacity: 0;
+    transition: transform 0.6s ease, opacity 0.6s ease;
+}
+
+.click-me-btn:active::after {
+    transform: translate(-50%, -50%) scale(4);
+    opacity: 1;
+}
+
+.click-me-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Responsive Styling */
+@media (max-width: 768px) {
+    .item-box {
+        height: 250px;
+    }
+
+    .item-mask h3 {
+        font-size: 18px;
+    }
+
+    .item-mask p {
+        font-size: 12px;
+    }
+}
+
+/* Styling for Description Text */
+.para-desc {
+    font-family: "Lora", serif; /* Replace 'Lora' with your desired font */
+    font-size: 18px; /* Adjust size as needed */
+    line-height: 1.6; /* Ensures good readability */
+    color: #333333; /* Change color to suit the design */
+    text-align: center; /* Center the text */
+    margin: 20px auto; /* Center it horizontally and adjust vertical spacing */
+}
+
+/* Styling for Project Description in Item Mask */
+.item-mask p {
+    font-family: 'Lora', serif; /* Replace 'Lora' with your desired font */
+    font-size: 16px; /* Adjust size as needed */
+    line-height: 1.4; /* Ensures good readability */
+    color: #ffffff; /* Ensures text is readable over dark overlays */
+    letter-spacing: 0.5px; /* Fine-tune spacing */
+    margin: 0; /* Ensure no extra margin */
+    text-transform: none; /* Remove uppercase if not needed */
+}
+

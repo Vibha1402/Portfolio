@@ -1,0 +1,64 @@
+<section class="section pointer" id="portfolio">
+    <div class="container">
+      <!-- Section Title -->
+      <div class="row justify-content-center txt-bg txt-bg-portfolio">
+        <div class="col-lg-8 text-center">
+          <div class="wow fadeIn section-title mb-4 pb-2">
+            <div class="mb-5 pb-3">
+              <i class="far fa-clone h1 text-muted"></i>
+            </div>
+            <h2 class="h3 font-weight-bold">More About Me</h2>
+            <p class="text-muted mx-auto mt-4 para-desc">
+              A showcase of my projects, designed to reflect my creativity and attention to detail.
+            </p>
+          </div>
+        </div>
+      </div>
+  
+      <!-- Portfolio Grid -->
+      <div class="row container-grid mt-4 pt-2">
+        <div
+          *ngFor="let project of portfolioData"
+          class="wow {{project['animationClass']}} col-lg-4 col-md-6 spacing"
+          [attr.data-wow-delay]="[project['delay']]"
+        >
+          <!-- Tooltip on Hover -->
+          <ng-template #title>
+            <button class="click-me-btn">Click Me</button>
+          </ng-template>
+  
+          <!-- Project Link -->
+          <a
+          class="item-box m-3"
+          [placement]="[project['placement']]"
+          [ngbTooltip]="title"
+          [href]="project['link']"
+          target="_blank"
+          rel="noreferrer"
+          aria-label="project (opens in a new tab)"
+        >
+            <!-- Image Wrapper -->
+            <div class="img-wrapper">
+              <img
+                class="item-container img-fluid mx-auto"
+                src="assets/images/portfolio/{{project['project']}}.webp"
+                alt="{{project['project'].replaceAll('-',' ')}}"
+                title="{{project['project'].replaceAll('-',' ')}}"
+                loading="lazy"
+              />
+            </div>
+  
+            <!-- Caption -->
+            <div class="item-mask">
+                <div class="item-caption text-white text-center" style="font-family: 'Roboto', sans-serif; font-size: 16px;">
+                  <h3 class="h5" style="font-family: 'Roboto', sans-serif; font-size: 20px;">{{project['project'].replaceAll('-',' ')}}</h3>
+                  <p class="text-uppercase" style="font-family: 'Roboto', sans-serif; font-size: 14px;">{{project['description']}}</p>
+                </div>
+              </div>
+              
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+  

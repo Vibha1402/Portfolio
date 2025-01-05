@@ -1,0 +1,110 @@
+.txt-bg-achievement::before {
+    content: "My Achivements";
+  }
+  
+  .container-ach {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform-style: preserve-3d;
+    padding-bottom: 100px;
+  }
+  
+  .container-ach .box {
+    position: relative;
+    height: 420px;
+    margin: 40px;
+    background: #000000;
+    border-radius: 20px;
+    transform-style: preserve-3d;
+    overflow: hidden;
+  }
+  
+  .container-ach .box .description {
+    position: absolute;
+    left: 10px;
+    text-align: center;
+    color: #f1c40f; /* Bright gold color for more emphasis */
+    margin: 25px;
+    font-size: 18px; /* Larger font size for better readability */
+    font-family: 'Arial', sans-serif; /* Clean modern font */
+    font-weight: 600; /* Slightly bolder for emphasis */
+    line-height: 1.5; /* Better line spacing */
+    transform-style: preserve-3d;
+    transform: translate3d(0, 0, 55px);
+    transition: transform 0.65s ease, opacity 0.65s ease, color 0.4s ease;
+    opacity: 0;
+    z-index: 10;
+    top: 60%;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6); /* Soft shadow for a 3D effect */
+  }
+  
+  .container-ach .box:hover .description {
+    opacity: 1;
+    transform: translate3d(0, 0, 75px); /* Slight movement effect for hover */
+    color: #ffffff; /* Change text color to white when hovered */
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.8); /* Stronger shadow on hover */
+  }
+  
+  .container-ach .box:hover {
+    box-shadow: 0 30px 50px rgba(0, 0, 0, .3);
+  }
+  
+  .container-ach .box .ach-img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    max-width: 250px;
+    transition: .55s;
+    z-index: 11;
+    transform-style: preserve-3d;
+    transform: translate3d(-50%, -50%, 0) rotate(0);
+  }
+  
+  .container-ach .box:hover .ach-img {
+    transform: translate3d(-50%, -50%, 100px);
+    height: 110px;
+    width: 110px;
+    border-radius: 50%;
+    top: 25%;
+  }
+  
+  @media (min-width: 200px) and (max-width: 768px) {
+    .txt-bg-achievement::before {
+      font-size: 37px;
+    }
+  }
+  
+  @media (max-width: 1000px) {
+    .container-ach {
+      display: block;
+      overflow: hidden;
+    }
+    .container-ach .box {
+      margin: 40px auto;
+    }
+/* Simple Button Style with Borders */
+    .simple-btn {
+        display: inline-block;
+        padding: 12px 24px;
+        background-color: #007bff; /* Primary button color */
+        color: #ffffff;
+        text-align: center;
+        text-decoration: none;
+        border: 2px solid #007bff; /* Border with the same color as the background */
+        border-radius: 8px; /* Rounded corners */
+        font-size: 16px;
+        font-weight: 600;
+        transition: none; /* No transition effect */
+    }
+
+    /* Optional: Make the button look the same when hovered or clicked */
+    .simple-btn:hover,
+    .simple-btn:active {
+        background-color: #007bff;
+        color: #ffffff;
+        border: 2px solid #007bff;
+    }
+
+}
+  
